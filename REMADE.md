@@ -11,6 +11,9 @@
 
 
 
-注意：
+NOTICE：
     10.3日可以作为调研准备
     10.4日起每日将代码提交至git仓库，哪怕只增加一行代码且不管代码是否能跑通
+    
+git地址：
+    https://github.com/johnsoncn/cbg_homework
