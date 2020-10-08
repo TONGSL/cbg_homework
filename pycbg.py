@@ -1,12 +1,12 @@
-import sys
-import json
-import urllib
-import webbrowser
-import pyperclip
-if len(sys.argv) > 1 :
-	mapAddress = ''.join(sys.argv[1:])
-else :
-	mapAddress = pyperclip.paste()
+#import sys
+#import json
+#import urllib
+#import webbrowser
+#import pyperclip
+#if len(sys.argv) > 1 :
+#	mapAddress = ''.join(sys.argv[1:])
+#else :
+#	mapAddress = pyperclip.paste()
 #webbrowser.open('https://n.cbg.163.com/cbg/query.py?serverid=5&act=search_role'+mapAddress)
 import requests
 from bs4 import BeautifulSoup
@@ -25,7 +25,7 @@ def getContent(target):
 def parseContent(texts):
 # 正则需要的账号信息
 	pattern = re.compile('<img.*?alt="(.*?)".*?总评分.*?"val">(.*?)</span>.*?修为.*?"val">(.*?)</span>.*?修炼.*?"val">(.*?)</span>.*?装备评分.*?"val">(.*?)</span>.*?基础评分.*?"val">(.*?)</span>.*?"n-highlights".*?<i>(.*?)</td>.*?<td>(.*?)</td>.*?<td>.*?<span>(.*?)</span>.*?mapPriceColor[(](.*?)[)][)]</script>',re.S)
-	items = re.findall(pattern,str(texts))
+	items = str(re.findall(pattern,str(texts))).replace('</i>','').replace('<i>','、').replace('\\n','')
 	print(items)
 
 def main(page):
