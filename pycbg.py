@@ -32,6 +32,7 @@ def parseContent(texts):
 	#print(items)
 
 def saveContent(texts):
+	#将数据存储到本地数据库cbg_homework，集合紫禁之巅
 	client = pymongo.MongoClient(host='localhost')
 	db = client.cbg_homework
 	collection = db.zijinzhidian
@@ -66,6 +67,7 @@ def main(page):
 
 
 if __name__ == '__main__':
+	#爬取10页数据
 	for i in range(10):
 		main(i)
 	
