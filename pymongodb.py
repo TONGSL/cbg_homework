@@ -12,8 +12,10 @@ def singledata():
 	print(result)
 
 def findSumScore():
-	result = collection.find({'价格':{'$gt':'800000.00'}}).count()
-	print(result)
+	result = collection.find({'价格':{'$gt':'800000.00'}})
+	for item in result:
+		print(item)
+	#print(result)
 
 if __name__=='__main__':
 	#连接到mongodb及对应collection
